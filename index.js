@@ -119,7 +119,7 @@ for (var i = 1; i < finances.length; i++) {
   sumOfChanges += change;
 }
 
-let averageChange = sumOfChanges / (finances.length - 1);
+var averageChange = sumOfChanges / (finances.length - 1);
 
 console.log("Average Change: ", averageChange);
 
