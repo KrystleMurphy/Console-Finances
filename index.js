@@ -152,7 +152,7 @@ var maxDecreaseDate = '';
 for (var i = 1; i < finances.length; i++) {
   var currentAmount = finances[i][1];
   var previousAmount = finances[i - 1][1];
-  var decrease = currentAmount - previousAmount;
+  var decrease = currentAmount + previousAmount;
 
   if (decrease > maxDecrease) {
     maxDecrease = decrease;
@@ -161,3 +161,18 @@ for (var i = 1; i < finances.length; i++) {
 }
 
 console.log("Greatest Decrease in Profits/Losses: " + maxDecreaseDate + " " + "($" + maxDecrease + ")" );
+
+// var minDecrease = finances[0][1]; // Initialize with the first element's value
+// var minDecreaseMonth = finances[0][0]; // Initialize with the first element's month
+
+// for (var i = 1; i < finances.length; i++) {
+//   var currentElement = finances[i][1];
+//   var currentMonth = finances[i][0];
+
+//   if (currentElement < minDecrease) {
+//     minDecrease = currentElement;
+//     minDecreaseMonth = currentMonth;
+//   }
+// }
+
+// console.log("Greatest Decrease in Profits/Losses:", minDecreaseMonth, "($", minDecrease, ")");
