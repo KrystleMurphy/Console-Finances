@@ -109,6 +109,8 @@ console.log("Total: " + "$" + sum);
 
 
 // * The average of the **changes** in Profit/Losses over the entire period.
+//   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+//   * (`Total/(Number of months - 1)`)
 
 var total = 0;
 
@@ -124,16 +126,38 @@ var averageChange = total / (finances.length - 1);
 console.log("Average Change: ", averageChange);
 
 
-//   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-
-
-
-//   * (`Total/(Number of months - 1)`)
-
-
-
 // * The greatest increase in Profit/Losses (date and amount) over the entire period.
 
+var maxIncrease = 0;
+var maxIncreaseDate = '';
 
+for (var i = 1; i < finances.length; i++) {
+  var currentAmount = finances[i][1];
+  var previousAmount = finances[i - 1][1];
+  var increase = currentAmount - previousAmount;
+
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+    maxIncreaseDate = finances[i][0];
+  }
+}
+
+console.log("Greatest Increase in Profits/Losses: " + maxIncreaseDate + " " + "($" + maxIncrease + ")" );
 
 // * The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+var maxIncrease = 0;
+var maxIncreaseDate = '';
+
+for (var i = 1; i < finances.length; i++) {
+  var currentAmount = finances[i][1];
+  var previousAmount = finances[i - 1][1];
+  var increase = currentAmount - previousAmount;
+
+  if (increase > maxIncrease) {
+    maxIncrease = increase;
+    maxIncreaseDate = finances[i][0];
+  }
+}
+
+console.log("Greatest Increase in Profits/Losses: " + maxIncreaseDate + " " + "($" + maxIncrease + ")" );
